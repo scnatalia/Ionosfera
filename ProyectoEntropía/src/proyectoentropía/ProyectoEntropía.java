@@ -42,12 +42,21 @@ public class ProyectoEntropía
                     i++;
                 }
             }
-            do
+            while(n!=null)
             {
-               n=binput.readLine();
-               cont2++;
-            }while(n!=null);
-            double k[][]=new double[cont2][cont];
+                 n=binput.readLine();
+                if (n==null)
+                {
+                    cont2=cont2-1;
+                }
+                else
+                {
+                     cont2++;
+                   // System.out.println(" "+n);
+                }
+              
+            }
+            String k[][]=new String[cont2][cont]; 
             binput.close();
         }
         catch(IOException e)
