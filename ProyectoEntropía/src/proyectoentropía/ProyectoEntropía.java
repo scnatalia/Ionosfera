@@ -9,12 +9,17 @@ public class ProyectoEntropía
 {
     public static void main(String[] args)
     {
-        String n = null;
+        String n = null, name=null;
         int t,i,cont=0,cont2=0,h=0;
+        
         Scanner entrada=new Scanner(System.in);
+        System.out.println("Hola, ingresa el nombre del archivo exactamente como lo encuentres en el explorador de archivos");
+        name=entrada.nextLine();
+        name=name+".csv";
         try
         {   
-            FileReader input=new FileReader("BBDD.csv");
+            System.out.println(""+name);
+            FileReader input=new FileReader(name);
             BufferedReader binput=new BufferedReader(input);
             n=binput.readLine();
             for(i=0;i<n.length();i++)
@@ -63,7 +68,17 @@ public class ProyectoEntropía
         {
             System.out.println("\nNo se pudo cargar el archivo\n");
         }   
-        System.out.println(""+cont2);
+        try 
+        {
+             FileReader input=new FileReader(name);
+            BufferedReader binput=new BufferedReader(input);
+            binput.readLine();
+           
+        }
+        catch(IOException e)
+        {
+            System.out.println("\nNo se pudo cargar el archivo\n");
+        }
     }
     
 }
