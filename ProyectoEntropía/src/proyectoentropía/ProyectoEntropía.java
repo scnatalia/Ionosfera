@@ -18,7 +18,6 @@ public class ProyectoEntropía
         name=name+".csv";
         try
         {   
-            System.out.println(""+name);
             FileReader input=new FileReader(name);
             BufferedReader binput=new BufferedReader(input);
             n=binput.readLine();
